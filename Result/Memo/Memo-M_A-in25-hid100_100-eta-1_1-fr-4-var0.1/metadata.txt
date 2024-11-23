@@ -1,0 +1,12 @@
+mode: train
+network_type: Memo
+hidden_dims: [100,100]
+hetero_rates: [1, 1]
+plastic_types: ['M','A']
+scene_time: 4
+vec_len: 25
+lr_rate: 0.001
+VAR: 0.1
+out_dim: 1
+acc_threshold: 0.99
+acc_num: 5

@@ -11,7 +11,7 @@ class Stack(nn.Module):
         super().__init__()
         self.input_dim = input_dim
         hid_dim_list = hid_dim_list
-        self.hid_dim_list = hid_dim_list
+        self.hid_dim_list = [int(dim) for dim in hid_dim_list]
         self.training_loss = []
         self.HL_list = [[]]
         self.plastic_list = plastic_list
@@ -34,7 +34,7 @@ class Stack(nn.Module):
             nn.init.xavier_normal_(self.weight_matrix_list[i], gain=1.0)
 
 
-        self.w_final = torch.nn.Parameter(torch.empty(out_dim, self.hid_dim_list.sum()))
+        self.w_final = torch.nn.Parameter(torch.empty(out_dim, sum(self.hid_dim_list)))
         nn.init.xavier_normal_(self.w_final, gain=1.0)
         self.bias_matrix_list = nn.ParameterList([nn.Parameter(torch.empty(self.hid_dim_list[i], 1)) for i in range(len(self.hid_dim_list))])
         for i in range(len(self.bias_matrix_list)):

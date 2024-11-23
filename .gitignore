@@ -1,0 +1,9 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# macOS specific files
+.DS_Store
+
+# Results directory
+Results/

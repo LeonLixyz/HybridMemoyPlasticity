@@ -31,18 +31,26 @@ The scripts takes in any combination of plasticity types. For example, `[M,M,A]`
 
 ```
 .
-├── Memory_Networks
-│   ├── Dyn_RO.py       # Dynamic Readout architecture
-│   ├── Memo.py         # Memory Readout architecture
-│   ├── Nonl_RO.py      # Nonlinear Readout architecture
-│   └── Stack.py        # Stacked Plasticity architecture
-├── README.md           # Project documentation
-├── create_network.py   # Network creation utilities
-├── dataloader.py       # Data loading utilities
-├── main.py             # Main execution script
-├── plasticity.py       # Plasticity visualization tools
-├── run_exp.py     # Batch experiment runner
-└── trainer.py          # Training utilities
+├── Memory_Networks/          # Directory for network architectures
+│   ├── Dyn_RO.py             # Dynamic Readout architecture
+│   ├── Memo.py               # Memory Readout architecture
+│   ├── Nonl_RO.py            # Nonlinear Readout architecture
+│   └── Stack.py              # Stacked Plasticity architecture
+├── data/                     # Directory for data-related files
+│   ├── dataloader.py         # Data loading utilities
+│   └── (other data files)    # Any additional data files or scripts
+├── scripts/                  # Directory for scripts
+│   ├── run_exp.sh            # Script to run a single experiment
+│   ├── run_exp_all.sh        # Script to run all experiments
+│   └── (other scripts)       # Any additional scripts
+├── utils/                    # Directory for utility modules
+│   ├── create_network.py     # Network creation utilities
+│   ├── plasticity.py         # Plasticity visualization tools
+│   └── trainer.py            # Training utilities
+├── results/                  # Directory for storing results
+│   └── (experiment results)  # Subdirectories for each experiment's results
+├── README.md                 # Project documentation
+└── main.py                   # Main execution script
 ```
 
 ## Parameters
@@ -66,6 +74,14 @@ The scripts takes in any combination of plasticity types. For example, `[M,M,A]`
 
 ## Running Experiments
 
+### Creating the Environment
+
+```bash
+conda create -n neuro python=3.9
+conda activate neuro
+pip install -r requirements.txt
+```
+
 ### Training
 
 To run a single experiment, use the following command:
@@ -77,7 +93,7 @@ python main.py --mode train --network_type <network_type> --hidden_dims <hidden_
 or use the bash script:
 
 ```
-./run_exp.sh --network_type <network_type> --hidden_dims <hidden_dims> --hetero_rates <hetero_rates> --plastic_types <plastic_types> --scene_time <scene_time>
+./scripts/run_exp.sh --network_type <network_type> --hidden_dims <hidden_dims> --hetero_rates <hetero_rates> --plastic_types <plastic_types> --scene_time <scene_time>
 ```
 
 **Example:**
@@ -87,7 +103,7 @@ python main.py --mode train --network_type Memo --hidden_dims "[100,100]" --hete
 ```
 
 ```
-./run_exp.sh --network_type Memo --hidden_dims "[100,100]" --hetero_rates "[1,1]" --plastic_types "['M','A']" --scene_time 4
+./scripts/run_exp.sh --network_type Memo --hidden_dims "[100,100]" --hetero_rates "[1,1]" --plastic_types "['M','A']" --scene_time 4
 ```
 
 #### Visualization
@@ -109,7 +125,7 @@ python main.py --mode visualize --network_type Memo --hidden_dims "[100,100]" --
 To run all experiments in our report, execute:
 
 ```
-./run_exp_all.sh
+./scripts/run_exp_all.sh
 ```
 
 This script will run a series of experiments with various configurations, such as different network types, hidden layer dimensions, and plasticity types.

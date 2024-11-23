@@ -3,10 +3,10 @@ import torch.nn as nn
 import torch.optim as optim
 import os
 import argparse
-from trainer import CFDTrainer
-from plasticity import PlasticityVisualizer
-import create_network as NN
-import dataloader as DL
+from utils.trainer import CFDTrainer
+from utils.plasticity import PlasticityVisualizer
+import utils.create_network as NN
+import data.dataloader as DL
 import ast
 
 def parse_args():
