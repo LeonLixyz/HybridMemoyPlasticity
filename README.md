@@ -4,6 +4,8 @@ This repository implements novel memory plasticity mechanisms that combine multi
 advanced readout architectures for continual scene detection tasks. Our approach achieves state-of-the-art results. We
 also provide a scripts for analyzing the plasticity and hidden layer activities of the network.
 
+![Network Architecture Overview](./images/Neuro.png)
+
 ## Overview
 
 The project introduces:
