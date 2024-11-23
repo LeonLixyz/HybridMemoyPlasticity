@@ -1,8 +1,8 @@
 # Hybrid Memory Plasticity and Advanced Readout Architectures for Continual Scene Detection
 
 This repository implements novel memory plasticity mechanisms that combine multiplicative and additive plasticities and
-advanced readout architectures for continual scene detection tasks. Our approach achieves state-of-the-art results. We
-also provide a scripts for analyzing the plasticity and hidden layer activities of the network.
+advanced readout architectures for continual scene detection tasks. Our approach achieves state-of-the-art results compared to
+other biological plausible memory models. We also provide scripts for analyzing the plasticity and hidden activities of the network.
 
 ![Network Architecture Overview](./images/Neuro.png)
 
