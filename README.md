@@ -1,5 +1,7 @@
 # Hybrid Memory Plasticity and Advanced Readout Architectures for Continual Scene Detection
 
+Work completed during my sophomore year summer research at the Center for Theoretical Neuroscience ([CTN](https://ctn.zuckermaninstitute.columbia.edu/)), Zuckerman Institute ([ZI](https://zuckermaninstitute.columbia.edu/)).
+
 This repository implements novel memory plasticity mechanisms that combine multiplicative and additive plasticities and
 advanced readout architectures for continual scene detection tasks. Our approach achieves state-of-the-art results compared to
 other biological plausible memory models. We also provide scripts for analyzing the plasticity and hidden activities of the network.
